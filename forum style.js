@@ -61,4 +61,12 @@
     window.addEventListener('load', adjustLayout);
     // Adjust layout dynamically as the window is resized
     window.addEventListener('resize', adjustLayout);
+    // Adjust layout when DOM content is fully loaded
+    document.addEventListener('DOMContentLoaded', adjustLayout);
+    // Adjust layout when the page visibility changes (e.g., when switching tabs)
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+            adjustLayout();
+        }
+    });
 })();
