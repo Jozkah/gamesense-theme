@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Forum style
 // @namespace    https://gamesense.pub/
-// @version      v1.5
+// @version      v1.6
 // @description  Does some adjustments to the header
 // @author       Jozkah
 // @match        https://gamesense.pub/forums/*
@@ -23,7 +23,70 @@
         }
     })();
 
-     function adjustLayout() {
+    //Hide email
+    (function() {
+        if (window.location.href.includes('section=essentials')) {
+            const emailInput = document.querySelector('input[name="req_email"]');
+            if (emailInput) {
+                const originalEmail = emailInput.value;
+
+                // Create a span element to wrap the email
+                const spanElement = document.createElement('span');
+                spanElement.textContent = originalEmail;
+                spanElement.style.filter = 'blur(5px)';
+                spanElement.style.transition = 'filter 0.3s ease';
+
+                // Replace the input field with the span element to keep the layout consistent
+                emailInput.style.display = 'none'; // Hide the original input field
+                emailInput.parentNode.insertBefore(spanElement, emailInput);
+
+                // Show the real email on hover
+                spanElement.addEventListener('mouseover', function() {
+                    spanElement.style.filter = 'none';
+                });
+
+                // Reapply the blur when not hovering
+                spanElement.addEventListener('mouseout', function() {
+                    spanElement.style.filter = 'blur(5px)';
+                });
+            }
+        }
+    })();
+
+    //Hide Authentication
+    (function() {
+        if (window.location.href.includes('/forums/2fa.php')) {
+            // Select the recovery code element within the fieldset
+            const recoveryCodeElement = document.querySelector('fieldset p:nth-child(2)');
+            if (recoveryCodeElement) {
+                // Extract the recovery code text after "Recovery code: "
+                const originalCode = recoveryCodeElement.textContent.split(': ')[1];
+
+                // Create a span element to wrap the recovery code
+                const spanElement = document.createElement('span');
+                spanElement.textContent = originalCode;
+                spanElement.style.filter = 'blur(5px)';
+                spanElement.style.transition = 'filter 0.3s ease';
+
+                // Replace the text content with "Recovery code: " and the blurred span
+                recoveryCodeElement.textContent = 'Recovery code: ';
+                recoveryCodeElement.appendChild(spanElement);
+
+                // Remove blur on hover
+                spanElement.addEventListener('mouseover', function() {
+                    spanElement.style.filter = 'none';
+                });
+
+                // Reapply blur when not hovering
+                spanElement.addEventListener('mouseout', function() {
+                    spanElement.style.filter = 'blur(5px)';
+                });
+            }
+        }
+    })();
+
+    //Adjust layout automatically
+    function adjustLayout() {
         var titleHeight = document.getElementById('brdtitle').offsetHeight;
         var menuHeight = document.getElementById('brdmenu').offsetHeight;
         var welcomeHeight = document.getElementById('brdwelcome').offsetHeight;
@@ -39,12 +102,12 @@
         //var offset = totalHeight + welcomeHeight - 12; // Space between welcome and first notice bar
         var offset = totalHeight + welcomeHeight; // Start with no extra space
 
-         // Only adjust offset if we're on /index.php
-         if (window.location.pathname.endsWith('/index.php')) {
-             if (noticeBars.length >= 0) {
-                 offset -= 12; // Reduce 12px margin before the first notice bar if on /index.php and notice bars exist
-             }
-    }
+        // Only adjust offset if we're on /index.php
+        if (window.location.pathname.endsWith('/index.php')) {
+            if (noticeBars.length >= 0) {
+                offset -= 12; // Reduce 12px margin before the first notice bar if on /index.php and notice bars exist
+            }
+        }
 
         noticeBars.forEach(function(noticeBar, index) {
             if (noticeBar && chat) {
@@ -133,3 +196,4 @@
         }
     });
 })();
+
