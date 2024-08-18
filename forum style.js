@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Forum style
 // @namespace    https://gamesense.pub/
-// @version      v1.3
+// @version      v1.4
 // @description  Does some adjustments to the header
-// @author       Jozkah
+// @author       Jozkah, NotZw3tty
 // @match        https://gamesense.pub/forums/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gamesense.pub
 // @grant        none
@@ -23,7 +23,7 @@
         }
     })();
 
-    function adjustLayout() {
+     function adjustLayout() {
         var titleHeight = document.getElementById('brdtitle').offsetHeight;
         var menuHeight = document.getElementById('brdmenu').offsetHeight;
         var welcomeHeight = document.getElementById('brdwelcome').offsetHeight;
@@ -60,60 +60,52 @@
     }
 
 
-
-    // Shoutbox check
     let checkInterval;
-    function checkForClosedConnection() {
+    function displayCustomErrorMessage() {
+        const shoutbox = document.getElementById('shout');
+        if (!shoutbox) return;
 
-        const forms = document.querySelectorAll('form');
-        forms.forEach(form => {
-            const labelText = form.innerText || form.textContent;
-            if (labelText.includes('Your connection is closed, please refresh')) {
-                form.style.display = 'none'; // This hides the form
-                displayMessageInShout();
-                clearInterval(checkInterval);
-            }
-        });
-    }
+        // Get the form element inside the shoutbox
+        const form = shoutbox.querySelector('form');
+        if (!form) return;
 
-    function displayMessageInShout() {
-        const shoutDiv = document.getElementById('shout');
-        if (shoutDiv) {
+        const label = form.querySelector('label span');
+        if (label && label.innerHTML.includes('Your connection is <strong>closed</strong>, please <strong>refresh</strong>')) {
+            // Preserve the original container size
+            shoutbox.style.display = 'flex';
+            shoutbox.style.alignItems = 'center';
+            shoutbox.style.justifyContent = 'center';
+            shoutbox.innerHTML = '';
 
-            // Create a container div for the message
-            const messageDiv = document.createElement('div');
-            messageDiv.style.position = 'absolute';
-            messageDiv.style.top = '35%';
-            messageDiv.style.left = '50%';
-            messageDiv.style.transform = 'translate(-50%, -50%)';
-            messageDiv.style.color = 'white';
-            messageDiv.style.textAlign = 'center';
-            messageDiv.style.fontSize = '10px';
+            // Create and insert the custom error message
+            const errorOverlay = document.createElement('div');
+            errorOverlay.style.cssText = `
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background-color: #272726;
+                width: 100%;
+                height: 200px; /* Exact height to match original shoutbox */
+                color: #ccc;
+                overflow: hidden;
+            `;
+            errorOverlay.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="60" height="60" viewBox="0 0 20 20" nighteye="disabled">
+                    <path fill="#e25950" d="M18.5 19h-18c-0.178 0-0.342-0.094-0.432-0.248s-0.091-0.343-0.004-0.498l9-16c0.089-0.157 0.255-0.255 0.436-0.255s0.347 0.097 0.436 0.255l9 16c0.087 0.155 0.085 0.344-0.004 0.498s-0.254 0.248-0.432 0.248zM1.355 18h16.29l-8.145-14.48-8.145 14.48z"/>
+                    <path fill="#e25950" d="M9.5 14c-0.276 0-0.5-0.224-0.5-0.5v-5c0-0.276 0.224-0.5 0.5-0.5s0.5 0.224 0.5 0.5v5c0 0.276-0.224 0.5-0.5 0.5z"/>
+                    <path fill="#e25950" d="M9.5 17c-0.276 0-0.5-0.224-0.5-0.5v-1c0-0.276 0.224-0.5 0.5-0.5s0.5 0.224 0.5 0.5z"/>
+                </svg>
+                <span style="padding: 10px;font-size: 1em;">Your connection is <strong style="color: #fff;">closed</strong>, please <strong style="color: #fff;">refresh</strong></span>
+            `;
 
-            // Add the image
-            const imgElement = document.createElement('img');
-            imgElement.className = 'statusimg';
-            imgElement.src = '/static/img/warning.svg';
-            imgElement.style.display = 'block';
-            imgElement.style.margin = '0 auto 10px';
-            imgElement.style.width = '80px';
-            imgElement.style.height = '80px';
-
-            // Set the message text
-            const textElement = document.createElement('div');
-            textElement.innerHTML = 'Your connection is <strong>closed</strong>, please <strong>refresh</strong>';
-
-            // Append the image and the text to the messageDiv
-            messageDiv.appendChild(imgElement);
-            messageDiv.appendChild(textElement);
-
-            // Append the messageDiv to the shoutDiv
-            shoutDiv.appendChild(messageDiv);
+            shoutbox.appendChild(errorOverlay);
         }
     }
 
-    checkForClosedConnection();
-    checkInterval = setInterval(checkForClosedConnection, 0);
+    displayCustomErrorMessage();
+    checkInterval = setInterval(displayCustomErrorMessage, 0);
 
 
 
@@ -139,3 +131,4 @@
         }
     });
 })();
+
