@@ -60,7 +60,7 @@
     }
 
 
-    let checkInterval;
+        let checkInterval;
     function displayCustomErrorMessage() {
         const shoutbox = document.getElementById('shout');
         if (!shoutbox) return;
@@ -92,11 +92,7 @@
                 overflow: hidden;
             `;
             errorOverlay.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="60" height="60" viewBox="0 0 20 20" nighteye="disabled">
-                    <path fill="#e25950" d="M18.5 19h-18c-0.178 0-0.342-0.094-0.432-0.248s-0.091-0.343-0.004-0.498l9-16c0.089-0.157 0.255-0.255 0.436-0.255s0.347 0.097 0.436 0.255l9 16c0.087 0.155 0.085 0.344-0.004 0.498s-0.254 0.248-0.432 0.248zM1.355 18h16.29l-8.145-14.48-8.145 14.48z"/>
-                    <path fill="#e25950" d="M9.5 14c-0.276 0-0.5-0.224-0.5-0.5v-5c0-0.276 0.224-0.5 0.5-0.5s0.5 0.224 0.5 0.5v5c0 0.276-0.224 0.5-0.5 0.5z"/>
-                    <path fill="#e25950" d="M9.5 17c-0.276 0-0.5-0.224-0.5-0.5v-1c0-0.276 0.224-0.5 0.5-0.5s0.5 0.224 0.5 0.5z"/>
-                </svg>
+                <img src="/static/img/warning.svg" alt="Warning" width="60" height="60">
                 <span style="padding: 10px;font-size: 1em;">Your connection is <strong style="color: #fff;">closed</strong>, please <strong style="color: #fff;">refresh</strong></span>
             `;
 
