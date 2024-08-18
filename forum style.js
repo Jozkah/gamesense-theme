@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Forum style
 // @namespace    https://gamesense.pub/
-// @version      v1.4
+// @version      v1.5
 // @description  Does some adjustments to the header
-// @author       Jozkah, NotZw3tty
+// @author       Jozkah
 // @match        https://gamesense.pub/forums/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gamesense.pub
 // @grant        none
@@ -36,7 +36,15 @@
 
         var noticeBars = document.querySelectorAll('.notice-bar');
         var chat = document.getElementById('shout');
-        var offset = totalHeight + welcomeHeight - 12; // Space between welcome and first notice bar
+        //var offset = totalHeight + welcomeHeight - 12; // Space between welcome and first notice bar
+        var offset = totalHeight + welcomeHeight; // Start with no extra space
+
+         // Only adjust offset if we're on /index.php
+         if (window.location.pathname.endsWith('/index.php')) {
+             if (noticeBars.length >= 0) {
+                 offset -= 12; // Reduce 12px margin before the first notice bar if on /index.php and notice bars exist
+             }
+    }
 
         noticeBars.forEach(function(noticeBar, index) {
             if (noticeBar && chat) {
@@ -45,22 +53,20 @@
                 noticeBar.style.left = chat.offsetLeft - 1 + 'px';
                 noticeBar.style.boxSizing = 'border-box';
 
-                // Apply consistent margin-top to each notice bar
-                noticeBar.style.marginTop = (index === 0) ? '12px' : '12px';
                 noticeBar.style.top = offset + 'px';
 
-                offset += noticeBar.offsetHeight; // Space between consecutive notice bars
+                offset += noticeBar.offsetHeight + 12; // Space between consecutive notice bars
             }
         });
 
         var mainContent = document.getElementById('brdmain');
         if (mainContent) {
-            mainContent.style.marginTop = offset + 12 + 'px';
+            mainContent.style.marginTop = offset + 'px';
         }
     }
 
 
-        let checkInterval;
+    let checkInterval;
     function displayCustomErrorMessage() {
         const shoutbox = document.getElementById('shout');
         if (!shoutbox) return;
