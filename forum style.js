@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Forum style
 // @namespace    https://gamesense.pub/
-// @version      v1.7
+// @version      v1.7.1
 // @description  Does some adjustments to the header
 // @author       Jozkah
 // @match        https://gamesense.pub/forums/*
@@ -197,7 +197,8 @@
             overflow: 'hidden scroll',
             gridTemplateColumns: 'repeat(auto-fill, 32px)',
             border: '1.5px solid #333333',
-            color: '#D4D4D4'
+            color: '#D4D4D4',
+            backgroundColor: '#1d1d1c',
         }}, element('div', { style: { isolation: 'isolate', position: 'relative' }}, button))
 
         emojis.forEach(emoji => {
