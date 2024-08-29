@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Forum style
 // @namespace    https://gamesense.pub/
-// @version      v1.6
+// @version      v1.7
 // @description  Does some adjustments to the header
 // @author       Jozkah
 // @match        https://gamesense.pub/forums/*
@@ -174,6 +174,92 @@
 
 
 
+    //emojis stuff
+
+    const shout = document.querySelector('#shout')
+    if (!shout) return
+
+    const chat_input = shout.querySelector('#shouttext')
+    const emoji_selector = shout.querySelector('#emojiselector')
+    const emojis = (await getInnerText(emoji_selector)).split('\n')
+
+    const button = element('button', { id: 'emojiselector', innerText: '😀', class: 'fake-link' }, emoji_selector.parentElement)
+    button.addEventListener('click', onToggleEmojiSelector)
+
+    const emoji_container = element('div', { id: 'emoji-container', state: false, style: {
+        display: 'none',
+        position: 'absolute',
+        top: '-215px',
+        left: '-327px',
+        maxWidth: '391px',
+        maxHeight: '185px', /*maxheight multiple of 23 for the buttons to fit in the container perfectly*/
+        overflow: 'hidden scroll',
+        gridTemplateColumns: 'repeat(auto-fill, 32px)',
+        border: '1.5px solid #333333',
+        color: '#D4D4D4'
+    }}, element('div', { style: { isolation: 'isolate', position: 'relative' }}, button))
+
+    emojis.forEach(emoji => {
+        element('button', { class: 'emoji-button fake-link', innerText: emoji, style: {
+            background: '#1d1d1c',
+            border: 'none',
+            padding: '5px',
+            margin: '0',
+            fontSize: 'inherit',
+            color: 'inherit',
+            textAlign: 'center',
+            boxShadow: 'none',
+            outline: '1px',
+            cursor: 'pointer'
+        }}, emoji_container).addEventListener('click', onEmojiClick)
+    })
+
+    shout.style.overflow = 'hidden'
+    shout.querySelector(':scope > form').style.overflow = 'visible'
+    emoji_selector.style.display = 'none'
+
+    function onEmojiClick(event) {
+        chat_input.value += event.target.innerText
+    }
+
+    function onToggleEmojiSelector() {
+        const state = (emoji_container.state = !emoji_container.state)
+        if (state) {
+            requestAnimationFrame(() => void document.body.addEventListener('click', onToggleEmojiSelector))
+            emoji_container.style.display = 'grid'
+        } else {
+            document.body.removeEventListener('click', onToggleEmojiSelector)
+            emoji_container.style.display = 'none'
+        }
+    }
+
+    async function getInnerText(e) {
+        return e.innerText || new Promise(resolve => {
+            new MutationObserver((_, observer) => {
+                if (e.innerText) {
+                    resolve(e.innerText)
+                    observer.disconnect()
+                }
+            }).observe(e, { childList: true, subtree: true, characterData: true })
+        })
+    }
+
+    function element(tag, properties = {}, parent = null) {
+        const e = document.createElement(tag)
+        for (const [property, value] of Object.entries(properties)) {
+            if (property === 'class') {
+                value.split(' ').forEach(v => e.classList.add(v))
+            } else if (property === 'children') {
+                value.forEach(child => e.appendChild(child))
+            } else if (property === 'style') {
+                Object.assign(e.style, value)
+            } else {
+                e[property] = value
+            }
+        }
+        if (parent) parent.appendChild(e)
+        return e
+    }
 
     // Listeners
     // Adjust layout when the page loads
