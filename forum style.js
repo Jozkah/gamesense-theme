@@ -191,7 +191,7 @@
             display: 'none',
             position: 'absolute',
             top: '-215px',
-            left: '-327px',
+            left: '-328px',
             maxWidth: '391px',
             maxHeight: '185px', /*maxheight multiple of 23 for the buttons to fit in the container perfectly*/
             overflow: 'hidden scroll',
