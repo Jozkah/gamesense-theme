@@ -1,0 +1,1958 @@
+/* ==UserStyle==
+@name           gamesense forum theme
+@namespace      github.com/Jozkah/gamesense-theme
+@version        0.0.4
+@description    gamesense forum theme (cleaned: bug fixes + dead-rule removal)
+@author         abbie (cleanup by Jozkah)
+==/UserStyle== */
+@-moz-document regexp("^https?://gamesense\\.pub/forums.*$") {
+    .pun abbr,
+    .pun blockquote,
+    .pun cite,
+    .pun dd,
+    .pun div,
+    .pun dl,
+    .pun dt,
+    .pun fieldset,
+    .pun form,
+    .pun h1,
+    .pun h2,
+    .pun h3,
+    .pun h4,
+    .pun h5,
+    .pun img,
+    .pun li,
+    .pun ol,
+    .pun p,
+    .pun pre,
+    .pun table,
+    .pun td,
+    .pun th,
+    .pun ul {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .pun .postmsg ul.likelist {
+        list-style: none;
+        padding: 6px 0 6px 0;
+    }
+
+    div#brdmain {
+        margin-top: 115px;
+    }
+
+    .pun ol,
+    .pun ul {
+        list-style: none
+    }
+
+    .pun .clearer,
+    .pun .nosize {
+        height: 0;
+        width: 0;
+        line-height: 0;
+        font-size: 0;
+        overflow: hidden
+    }
+
+    .pun .clearb,
+    .pun .clearer {
+        clear: both
+    }
+
+    .pun .nosize {
+        position: absolute;
+        left: -9999em;
+        text-indent: -9999em;
+        width: 0
+    }
+
+    * html .codebox,
+    * html .inbox,
+    * html .inform,
+    * html .pun,
+    * html .tclcon {
+        height: 1px
+    }
+
+    .pun,
+    .pun .codebox,
+    .pun .inbox,
+    .pun .inform,
+    .pun .tclcon {
+        min-height: 1px;
+    }
+
+    .clearl {
+        clear: left
+    }
+
+    #brdfooter h2,
+    #brdstats .conl dt,
+    #brdstats .conr dt,
+    #brdstats h2,
+    #modcontrols dt,
+    #searchlinks dt,
+    .pun .required strong span,
+    div.postright h3,
+    span.closedtext {
+        position: absolute;
+        display: block;
+        overflow: hidden;
+        width: 0;
+        left: -9999em;
+        text-indent: -9999em
+    }
+
+    .pun {
+        font: 11px Verdana, Helvetica, Arial, sans-serif;
+        line-height: normal;
+        padding: 12px 0 12px 0
+    }
+
+    .pun input,
+    .pun legend,
+    .pun optgroup,
+    .pun samp,
+    .pun select,
+    .pun table,
+    .pun td,
+    .pun textarea,
+    .pun th {
+        font-size: 10px;
+        font-family: verdana, helvetica, arial, sans-serif
+    }
+
+    .pun code,
+    .pun pre {
+        font-size: 1.182em;
+        font-family: consolas, monaco, "bitstream vera sans mono", "courier new", courier, monospace
+    }
+
+    .pun pre code {
+        font-size: 1em;
+        tab-size: 4;
+        -moz-tab-size: 4
+    }
+
+    .pun strong {
+        font-weight: 700
+    }
+
+    .pun em {
+        font-style: italic
+    }
+
+    .pun .forumdesc {
+        font-size: 10px;
+        color: #888
+    }
+
+    .pun dl,
+    .pun ol,
+    .pun p,
+    .pun ul {
+        font-size: 11px;
+        padding: 3px 0
+    }
+
+    .pun h2 {
+        font-size: 1em;
+        font-weight: 400;
+        padding: 4px 6px
+    }
+
+    .pun h3 {
+        font-size: 1.091em;
+        padding: 3px 0
+    }
+
+    .pun table h3,
+    .pun table p {
+        padding: 0
+    }
+
+    .pun p.warntext,
+    .pun span.warntext {
+        font-weight: 700
+    }
+
+    .pun .postmsg p,
+    .pun .usercontent p {
+        padding: .75em 0;
+    }
+
+    .pun .postmsg ul,
+    .pun .usercontent ul {
+        padding: .75em 1em .75em 2.5em;
+        list-style: disc
+    }
+
+    .pun .postmsg ol,
+    .pun .usercontent ol {
+        padding: .75em 1em .75em 2.5em;
+        list-style: decimal
+    }
+
+    .pun .postmsg ol.alpha,
+    .pun .usercontent ol.alpha {
+        list-style: lower-alpha
+    }
+
+    .pun .postmsg li ol,
+    .pun .postmsg li ul,
+    .pun .usercontent li ol,
+    .pun .usercontent li ul {
+        padding: .25em 1em .75em 2.5em
+    }
+
+    .pun .postmsg li p,
+    .pun .usercontent li p {
+        padding: 0
+    }
+
+    .pun .usercontent h1 {
+        font-size: 1.4em;
+        font-weight: 700;
+        padding: .75em 0 0 0
+    }
+
+    .pun .usercontent h2 {
+        font-size: 1.2em;
+        font-weight: 700;
+        padding: .75em 0 0 0
+    }
+
+    .pun .usercontent h3 {
+        font-size: 1.1em;
+        font-weight: 700;
+        padding: .75em 0 0 0
+    }
+
+    .pun .usercontent h4,
+    .pun .usercontent h5,
+    .pun .usercontent h6 {
+        font-size: 1em;
+        font-weight: 700;
+        padding: .75em 0 0 0
+    }
+
+    .pun .quotebox cite {
+        font-weight: 700;
+        font-style: normal;
+        padding: .75em .75em 0 .75em
+    }
+
+    .pun span.bbu {
+        text-decoration: underline
+    }
+
+    .pun del,
+    .pun span.bbs {
+        text-decoration: line-through
+    }
+
+    #punhelp samp ins,
+    .pun .postmsg ins {
+        text-decoration: none
+    }
+
+    #punhelp h5,
+    .pun div.postmsg h5 {
+        font-size: 1.1em;
+        font-weight: 700;
+        padding: .75em 0 0 0
+    }
+
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .pun {
+        max-width: 1280px;
+        min-width: 320px;
+        margin: 0 auto;
+        padding: 12px 20px;
+    }
+
+
+    #pundb_update,
+    #puninstall,
+    #punmaint,
+    #punredirect .punwrap #brdmain {
+        margin: 15px
+    }
+
+    #brdheader {
+        margin: 0 0 12px 0;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 100%;
+        background: #111111;
+        border-bottom: 1px solid #303030;
+        box-shadow: 0 0 0 1px #0C0C0C;
+    }
+
+    #brdtitle p {
+        padding-top: 0
+    }
+
+    #announce,
+    #brdstats {
+        margin: 12px 0 12px 0;
+    }
+
+    #postreview,
+    .pun .block,
+    .pun .block2col,
+    .pun .blockform,
+    .pun .blocktable {
+        margin-bottom: 1em
+    }
+
+    #punindex .blocktable,
+    .pun .blockpost {
+        margin-bottom: 12px;
+    }
+
+    #postreview .blockpost {
+        margin-bottom: -1px
+    }
+
+    .pun .block2col .block,
+    .pun .block2col .blockform {
+        margin-bottom: 0
+    }
+
+    .pun .linksb,
+    .pun .linkst {
+        margin-top: -12px
+    }
+
+    .pun .postlinksb {
+        margin-top: -6px
+    }
+
+    .pun .box {
+        border-style: solid;
+        border-width: 1px
+    }
+
+    #brdheader .box {
+        border-top-width: unset;
+        border-radius: unset;
+        max-width: 1280px;
+        min-width: 300px;
+        margin: auto;
+        background-color: transparent;
+        border: none;
+    }
+
+    .pun .block .inbox,
+    .pun .blockmenu .inbox {
+        padding: 6px 12px;
+    }
+
+    #brdtitle h1 {
+        font-size: 3em;
+        font-weight: 100;
+        padding: 15px 0;
+        margin-left: -9px;
+        font-family: Raleway, Verdana;
+    }
+
+    #brdtitle h1 a {
+        color: #eaeaea
+    }
+
+    #brdtitle h1 a span {
+        color: #95b806
+    }
+
+    #brdmenu li {
+        display: inline;
+        margin-right: 12px
+    }
+
+    #brdmenu a:link,
+    #brdmenu a:visited {
+        text-decoration: none;
+    }
+
+    #brdmenu a:hover {
+        text-decoration: none;
+    }
+
+    #brdmenu a:active,
+    #brdmenu a:hover {
+        text-decoration: underline
+    }
+
+    #brdwelcome .conl {
+        float: left
+    }
+
+    #brdwelcome .conr {
+        float: right;
+        text-align: right
+    }
+
+    .pun .linkst {
+        padding: 8px 6px 3px 6px
+    }
+
+    .pun .linksb,
+    .pun .postlinksb {
+        padding: 3px 6px 8px 6px
+    }
+
+    .pun .crumbs {
+        clear: both;
+        width: 100%;
+        overflow: hidden;
+        font-size: 11px
+    }
+
+    .pun .crumbs li {
+        display: inline;
+        white-space: nowrap;
+        font-weight: 700
+    }
+
+    .pun .pagelink {
+        float: left;
+        white-space: nowrap
+    }
+
+    .pun .postlink {
+        font-weight: 700;
+        white-space: nowrap
+    }
+
+    .pun .modbuttons,
+    .pun .postlink {
+        float: right;
+        text-align: right
+    }
+
+    .pun .modbuttons {
+        padding: 1px 0;
+        white-space: nowrap
+    }
+
+    .pun .modbuttons input {
+        margin-left: 6px
+    }
+
+    .pun .postlink a:link,
+    .pun .postlink a:visited {
+        text-decoration: none
+    }
+
+    .pun .postlink a:active,
+    .pun .postlink a:hover {
+        text-decoration: underline
+    }
+
+    .pun .topiclink {
+        font-size: 11px
+    }
+
+    #punindex .subscribelink {
+        margin-top: 6px
+    }
+
+    /* Consolidated .conl / .conr float helpers (was repeated per-id). */
+    .pun .conl {
+        float: left
+    }
+
+    .pun .conr {
+        float: right;
+        text-align: right
+    }
+
+    #brdfooter #modcontrols {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        text-align: center
+    }
+
+    #brdfooter #modcontrols dd {
+        display: inline;
+    }
+
+    #onlinelist dd,
+    #onlinelist dt {
+        display: inline
+    }
+
+    .pun table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        empty-cells: show
+    }
+
+    .pun .blocktable table {
+        table-layout: fixed;
+    }
+
+    .pun td,
+    .pun th {
+        padding: 4px 6px;
+        text-align: left;
+        font-weight: 400
+    }
+
+    .pun tbody td,
+    .pun tbody th {
+        border-style: solid none none solid;
+        border-width: 1px
+    }
+
+    .pun .tcl {
+        border-left: 0;
+        width: auto;
+    }
+
+    .pun .tc2,
+    .pun .tc3,
+    .pun .tcmod {
+        width: 10%;
+        text-align: center;
+        padding: 4px;
+    }
+
+    .pun .tcr {
+        width: 30%;
+        overflow-x: hidden;
+        white-space: normal;
+    }
+
+    .pun .tcl h3 {
+        font-size: 11px;
+        font-weight: 700
+    }
+
+    .pun .tcl h3 a {
+        color: #ccc
+    }
+
+    .pun .tcl h3 a:hover {
+        color: #b4e61e
+    }
+
+    .pun .tcl h3 span.newtext {
+        font-size: .917em
+    }
+
+    .pun .tcl span.newtext,
+    .pun .tcl span.pagestext {
+        white-space: nowrap;
+        font-weight: 400
+    }
+
+    .pun td span.byuser {
+        white-space: normal
+    }
+
+    .pun .tcl p {
+        padding: 5px 0 0 0
+    }
+
+    #punsearch #vf .tc2 {
+        width: 18%;
+        text-align: left;
+        padding: 4px 6px
+    }
+
+    #users1 .tcr {
+        width: 25%
+    }
+
+    #users1 .tc2 {
+        width: 25%;
+        text-align: left;
+        padding: 4px 6px
+    }
+
+    #debug .tcl {
+        width: 10%
+    }
+
+    #debug .tcr {
+        width: 90%;
+        white-space: normal
+    }
+
+    #punindex .tcr {
+        white-space: nowrap
+    }
+
+    #punindex .tcr .byuser {
+        display: block
+    }
+
+    .pun .blocktable .tclcon {
+        padding: 0 11px 0 12px;
+        overflow: hidden;
+        min-height: 1px;
+        position: relative
+    }
+
+    .pun .blocktable .tclcon div {
+        width: 100%;
+        overflow: hidden
+    }
+
+    .pun .icon {
+        margin: .3em 0 0 .2em;
+        border-width: .4em;
+        border-style: solid;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        float: left
+    }
+
+    .pun .icon div {
+        position: absolute;
+        left: -9999em;
+        text-indent: -9999em;
+        height: 0
+    }
+
+    .pun .iposted .ipost {
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+        width: 8px;
+        padding-left: 4px;
+        text-align: center;
+        top: 0
+    }
+
+    .pun .rowlist {
+        display: table-cell;
+        vertical-align: middle
+    }
+
+    .pun .blockform form,
+    .pun .fakeform {
+        padding: 20px 20px 15px 20px
+    }
+
+    .pun .forminfo {
+        margin-bottom: 12px;
+        padding: 9px 10px;
+        border-style: solid;
+        border-width: 1px
+    }
+
+    .pun .forminfo h3 {
+        font-weight: 700
+    }
+
+    .pun .inform {
+        padding-bottom: 12px
+    }
+
+    .pun fieldset {
+        padding: 0 12px 0 12px;
+        border-style: solid;
+        border-width: 1px
+    }
+
+    .pun legend {
+        padding: 0 6px
+    }
+
+    .pun .infldset {
+        padding: 9px 0 12px 0
+    }
+
+    .pun label {
+        display: block;
+        padding: 3px 0
+    }
+
+    .pun label.conl {
+        float: left;
+        overflow: visible;
+        margin-right: 10px
+    }
+
+    .pun fieldset .rbox br {
+        display: none
+    }
+
+    .pun fieldset .rbox label {
+        padding: 3px 0 3px 25px;
+        position: relative;
+        vertical-align: middle
+    }
+
+    .pun fieldset .rbox input {
+        margin: 0 9px 0 -25px;
+        padding: 0;
+        width: 16px;
+        position: relative;
+        vertical-align: middle
+    }
+
+    .pun .txtarea {
+        width: 75%
+    }
+
+    .pun .txtarea textarea,
+    .pun input.longinput {
+        width: 100%
+    }
+
+    .pun .bblinks {
+        padding-bottom: 10px;
+        padding-left: 4px
+    }
+
+    .pun .bblinks li {
+        display: inline;
+        padding-right: 20px
+    }
+
+    .pun .blockform .buttons {
+        padding-left: 12px
+    }
+
+    .pun .blockform .buttons input {
+        margin-right: 8px
+    }
+
+    #posterror ul {
+        list-style: square;
+        padding: 3px 0 3px 24px
+    }
+
+    .pun .deletemsg {
+        border-style: solid;
+        border-width: 1px;
+        padding: 6px 15px
+    }
+
+    .pun p.actions span {
+        margin-right: 12px
+    }
+
+    .pun .multiselect {
+        float: left;
+        padding-bottom: 7px
+    }
+
+    .pun .checklist {
+        border-width: 1px;
+        border-style: solid;
+        max-height: 9em;
+        width: 20em;
+        overflow: auto;
+        padding: .3em .5em;
+        margin: .25em 16px 0 .15em
+    }
+
+    .pun .checklist fieldset {
+        border: 0;
+        padding: 0
+    }
+
+    .pun .checklist legend {
+        padding: 0
+    }
+
+    .pun .checklist legend span {
+        width: auto;
+        max-width: 25em
+    }
+
+    .pun .block2col {
+        padding-bottom: 1px
+    }
+
+    .pun .block2col .block,
+    .pun .block2col .blockform {
+        margin-left: 15.9%;
+    }
+
+    .pun .blockmenu {
+        float: left;
+        width: 15%;
+    }
+
+    .pun .blockmenu li {
+        padding: 3px 0;
+        font-weight: 700
+    }
+
+    .pun .blockmenu a:link,
+    .pun .blockmenu a:visited {
+        text-decoration: none
+    }
+
+    .pun .blockmenu a:active,
+    .pun .blockmenu a:hover {
+        text-decoration: underline
+    }
+
+    #viewprofile dl {
+        float: left;
+        width: 100%;
+        overflow: hidden
+    }
+
+    #viewprofile dd {
+        margin-left: 14em;
+        padding: 3px
+    }
+
+    #viewprofile dt {
+        float: left;
+        width: 13em;
+        margin: 3px 0
+    }
+
+    #profileavatar img {
+        float: right;
+        margin-left: 1em
+    }
+
+    #adintro ul {
+        list-style-type: disc;
+        margin-left: 8px;
+        padding-left: 16px
+    }
+
+    #viewscript dt {
+        float: left;
+        width: 13em;
+        padding: 3px;
+        line-height: 1.25em
+    }
+
+    #viewscript dd {
+        margin-left: 14em;
+        padding: 3px;
+        margin-bottom: 3px;
+        line-height: 1.25em;
+        background-color: #303030
+    }
+
+    .pun .blockpost h2 a:link,
+    .pun .blockpost h2 a:visited {
+        text-decoration: none
+    }
+
+    .pun .blockpost h2 a:active,
+    .pun .blockpost h2 a:hover {
+        text-decoration: underline
+    }
+
+    .pun .blockpost h2 .conr {
+        float: right;
+        text-align: right
+    }
+
+    #punsearch .blockpost h2 span {
+        white-space: nowrap
+    }
+
+    .pun .blockpost .box {
+        overflow: hidden
+    }
+
+    .pun .postfootleft,
+    .pun .postleft {
+        float: left;
+        width: 18em;
+        position: relative;
+        padding-top: 6px;
+        overflow: hidden;
+    }
+
+    .pun .postleft dl {
+        padding: 6px;
+        text-align: center;
+    }
+
+    .pun .postleft .icon,
+    .pun .postleft .usercontacts {
+        margin-top: 6px
+    }
+
+    .pun .postleft .postavatar,
+    .pun .postleft .usertitle {
+        margin-bottom: 6px;
+        display: block
+    }
+
+    .pun .blockpost dt {
+        font-size: 1.091em;
+        font-weight: 700
+    }
+
+    .pun .blockpost dt a:link,
+    .pun .blockpost dt a:visited {
+        text-decoration: none
+    }
+
+    .pun .blockpost dt a:active,
+    .pun .blockpost dt a:hover {
+        text-decoration: underline
+    }
+
+    .pun .postfootright,
+    .pun .postright {
+        border-left-width: 18em;
+        border-left-style: solid
+    }
+
+    #postpreview .postright {
+        border-left: 0
+    }
+
+    .pun .postright {
+        padding: 6px 12px 0 12px;
+    }
+
+    .pun .multidelete,
+    .pun .postfootright {
+        text-align: right
+    }
+
+    .pun .postmsg {
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 6px;
+        word-wrap: break-word;
+    }
+
+    .pun .postmsg p {
+        font-size: 11px
+    }
+
+    blockquote div p {
+        margin-left: 5px;
+    }
+
+    .pun .postfootleft p,
+    .pun .postfootright div,
+    .pun .postfootright p,
+    .pun .postfootright ul {
+        padding: 10px 6px 10px 6px;
+    }
+
+    .pun .postfootright li {
+        display: inline
+    }
+
+    .pun .postfootright li:before {
+        content: "            ";
+        padding: 5px;
+    }
+
+    .pun .postfootright li:first-child:before {
+        content: ""
+    }
+
+    .pun .postfootright a:link,
+    .pun .postfootright a:visited {
+        text-decoration: none
+    }
+
+    .pun .postfootright a:active,
+    .pun .postfootright a:hover {
+        text-decoration: underline
+    }
+
+    .pun .codebox {
+        border-style: solid;
+        border-width: 1px;
+        margin: .75em 1em;
+        padding: 0
+    }
+
+    .pun .quotebox {
+        border-style: solid;
+        border-width: 1px;
+        margin: .4em 0 .75em 0;
+        padding: 0;
+    }
+
+    .pun .quotebox cite {
+        display: block;
+        padding: .5em 0 .5em .5em;
+        background: #1b1a1a;
+    }
+
+    .pun .quotebox blockquote {
+        width: 100%;
+        overflow: hidden;
+        padding-left: .5em;
+    }
+
+    .pun .codebox pre {
+        overflow: auto;
+        width: 100%;
+        overflow-y: hidden
+    }
+
+    * html .pun .codebox pre {
+        padding-bottom: 10px
+    }
+
+    .pun .codebox pre code {
+        display: block;
+        padding: .75em
+    }
+
+    .pun .codebox pre.vscroll {
+        max-height: 32em;
+        overflow: auto;
+        overflow-y: auto
+    }
+
+    .pun .postmsg img {
+        vertical-align: bottom
+    }
+
+    .pun .postsignature hr {
+        margin-left: 0;
+        text-align: left;
+        height: 1px;
+        border: none;
+    }
+
+    .pun .postmsg .postimg img {
+        max-width: 98%;
+        vertical-align: middle;
+        margin: 7px .5em 7px 0
+    }
+
+    .pun .postmsg .postimg a:link img,
+    .pun .postmsg .postimg a:visited img {
+        border-style: solid;
+        border-width: 2px
+    }
+
+    .pun .blockpost label {
+        padding: 3px 6px;
+        border-style: solid;
+        border-width: 1px;
+        vertical-align: middle;
+        display: inline-block
+    }
+
+    .pun .blockpost label * {
+        vertical-align: middle;
+        margin: 0;
+        padding: 0
+    }
+
+    .pun input.pollchoice {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .pun .stickytext {
+        font-size: 1.2em;
+        color: #ffd200
+    }
+
+    #punhelp h2 {
+        margin-top: 12px
+    }
+
+    #punhelp div.box {
+        padding: 10px
+    }
+
+    #debugtime {
+        margin-top: -12px;
+        text-align: center
+    }
+
+    #brdfooter dl a,
+    #brdwelcome,
+    div.blockmenu li,
+    div.rbox input {
+        line-height: 1.4em;
+    }
+
+    #announce div.inbox div {
+        padding: 3px 0
+    }
+
+    .pun .inbox thead {
+        color: #777;
+        font-size: 10px;
+        border-style: none;
+        display: none;
+    }
+
+    .pun .inbox thead .tc2,
+    .pun .inbox thead .tc3,
+    .pun .inbox thead .tcl,
+    .pun .inbox thead .tcr {
+        background-color: #353534;
+        border-bottom: 2px solid #95b806
+    }
+
+    body {
+        color: #d4d4d4;
+        background: url(https://i.imgur.com/cUHelzE.png);
+    }
+
+    .pun {
+        color: #d4d4d4;
+        background-color: #151515;
+        border-left: 1px solid #303030;
+        border-right: 1px solid #303030;
+        border-bottom: 1px solid #303030;
+        box-shadow: 0 0 0 1px #0C0C0C;
+    }
+
+    .pun .box {
+        background-color: #1A1A1A;
+    }
+
+    .pun #adminconsole fieldset th {
+        background-color: #383838
+    }
+
+    #adminconsole fieldset td,
+    #adstats dd,
+    #brdfooter #modcontrols,
+    #postpreview,
+    #viewprofile dd,
+    .pun .blockmenu .box,
+    .pun .forminfo,
+    .pun td.tc2,
+    .pun td.tc3,
+    .pun td.tcmod {
+        background-color: #1a1a1a;
+    }
+
+    .pun h2 {
+        border-top-left-radius: unset;
+        border-top-right-radius: unset;
+        background-color: #0C0C0C !important;
+        border-top: 1px solid #303030;
+        border-right: 1px solid #303030;
+        border-left: 1px solid #303030;
+        border-bottom: 1px solid #95B806;
+        padding: 8px 8px 10px 8px;
+        text-transform: none;
+        font-size: 11px;
+        line-height: 1.4;
+        font-weight: 700;
+        position: relative;
+        color: #bbb;
+    }
+
+    .infldset h2 {
+        background: linear-gradient(0deg, #6e8806, #c6ea31);
+        border: 1px solid #0e0e0e !important;
+        padding: 2px;
+    }
+
+
+    .pun th {
+        background-color: #272726
+    }
+
+    .pun legend {
+        color: #60a0dc
+    }
+
+    #posterror li strong,
+    .pun .blockmenu li.isactive a {
+        color: #d4d4d4
+    }
+
+    .pun .usercontent * {
+        background: 0 0;
+        color: #d4d4d4
+    }
+
+    .pun input,
+    .pun select,
+    .pun textarea {
+        background-color: #212122;
+        color: #ccc;
+        border: 1px solid #3e3e3e
+    }
+
+    .pun input:hover,
+    .pun select:hover {
+        background-color: #1b1b1b;
+        border-color: #444;
+        color: #aaa
+    }
+
+    .pun input:disabled,
+    .pun input:disabled:hover,
+    .pun select:disabled,
+    .pun select:disabled:hover {
+        opacity: .5;
+        background-color: #1b1b1b;
+        color: #ccc;
+        border: 1px solid #3e3e3e
+    }
+
+    .pun input:focus,
+    .pun select:focus {
+        outline: 0;
+        border-color: #666
+    }
+
+    .pun .checklist,
+    .pun .multiselect {
+        color: #d4d4d4
+    }
+
+    .pun .checklist {
+        border-color: #666
+    }
+
+    .pun .rowodd {
+        background-color: #1A1A1A;
+    }
+
+    .blockpost.rowodd.liker {
+        margin-top: -12px;
+    }
+
+    .blockpost.roweven.liker {
+        margin-top: -13px;
+    }
+
+    .blockpost.rowodd.liker > * {
+        border-top: none;
+    }
+
+    .pun .roweven {
+        background-color: #1A1A1A;
+    }
+
+    .pun .roweven:hover,
+    .pun .rowodd:hover {
+        background-color: #20201f
+    }
+
+    .pun .blockpost .box,
+    .pun .deletemsg,
+    .pun .postfootright,
+    .pun .postright {
+        background-color: #232323;
+    }
+
+    .pun .postfootright,
+    .pun .postright {
+        border-left-color: hsla(0, 0%, 10%, 1);
+    }
+
+    .pun .blockpost label,
+    .pun .codebox,
+    .pun .postfootleft,
+    .pun .postleft,
+    .pun .quotebox {
+        background-color: #1A1A1A;
+    }
+
+    .pun .blockpost h2 {
+        padding: 10px 8px;
+        border-bottom: none;
+    }
+
+    .firstpost h2 {
+        border-bottom: 1px solid #95B806 !important;
+    }
+
+    .pun .blockpost h2 span.conr {
+        color: #a19e96
+    }
+
+    #punhelp samp ins,
+    .pun .postmsg ins {
+        background-color: #ff0
+    }
+
+    .pun hr {
+        background-color: #303030;
+        color: #606060;
+    }
+
+    .pun .box {
+        border-color: #303030;
+    }
+
+    .pun .blocktable .box {
+        border-top: none
+    }
+
+    #brdfooter #modcontrols,
+    .pun td {
+        border-color: #333
+    }
+
+    .pun th {
+        border-color: #292929
+    }
+
+    .pun fieldset {
+        border-color: #303030;
+    }
+
+    #adminconsole td,
+    #adminconsole th {
+        border-color: #383838
+    }
+
+    /* Note: border-color above was dead (overwritten by border:none); removed. */
+    .pun .blockpost label,
+    .pun .deletemsg,
+    .pun .forminfo,
+    .pun .quotebox {
+        border: none;
+        border-right: 1px solid #232323;
+        border-bottom: 1px solid #232323;
+        border-left: 2px solid #616161;
+        background: hsl(0, 0%, 18%);
+        width: 95%;
+    }
+
+    /* Single codebox border (was declared twice with a conflicting !important). */
+    .codebox {
+        border: 1px solid #848484;
+    }
+
+    .pun a:link,
+    .pun a:visited {
+        color: #60a0dc;
+        text-decoration: none
+    }
+
+    .pun a:active,
+    .pun a:focus,
+    .pun a:hover {
+        color: #80d6ff
+    }
+
+    .pun .postmsg .postimg a:link img,
+    .pun .postmsg .postimg a:visited img {
+        border-color: #60a0dc
+    }
+
+    .pun .postmsg .postimg a:active img,
+    .pun .postmsg .postimg a:focus img,
+    .pun .postmsg .postimg a:hover img {
+        border-color: #80d6ff
+    }
+
+    #brdmenu a:link,
+    #brdmenu a:visited,
+    .pun h2 a:link,
+    .pun h2 a:visited {
+        color: #828282;
+    }
+
+    #brdmenu a:active,
+    #brdmenu a:hover,
+    .pun h2 a:active,
+    .pun h2 a:hover {
+        color: #d4d4d4
+    }
+
+    .pun .iclosed td.tcl a:link,
+    .pun .iclosed td.tcl a:visited,
+    .pun .postreport a:link,
+    .pun .postreport a:visited {
+        color: #888
+    }
+
+    .pun .iclosed td.tcl a:active,
+    .pun .iclosed td.tcl a:hover,
+    .pun .postreport a:active,
+    .pun .postreport a:hover {
+        color: #aaa
+    }
+
+    .pun .maintenancelink a:link,
+    .pun .maintenancelink a:visited {
+        color: #ff4000
+    }
+
+    .pun .maintenancelink a:active,
+    .pun .maintenancelink a:hover {
+        color: #ff5010
+    }
+
+    .pun .icon {
+        border-color: #333;
+        border-radius: 0;
+    }
+
+    .pun .iredirect .icon {
+        border-color: #383838 #383838 #383838 #383838
+    }
+
+    .pun .inew .icon {
+        border-color: #5496d8 #4b85c0 #4377ac #4f8dcb
+    }
+
+    .pun .usergroup-1 {
+        color: #b4e61e !important;
+        font-weight: 700
+    }
+
+    .pun a:hover.usergroup-1 {
+        color: #e4ff5e !important
+    }
+
+    .pun .usergroup-2 {
+        color: #fc0 !important;
+        font-weight: 700
+    }
+
+    .pun a:hover.usergroup-2 {
+        color: #ffe478 !important
+    }
+
+    .pun .usergroup-5 {
+        color: #e61515 !important;
+        font-weight: 700
+    }
+
+    .pun a:hover.usergroup-5 {
+        color: #ff4545 !important
+    }
+
+    .pun a.usergroup-6 {
+        font-weight: 400;
+        color: #ccc;
+        opacity: .5
+    }
+
+    .pun a.usergroup-6:hover {
+        opacity: .75
+    }
+
+    .pun .usergroup-7 {
+        color: #58d794 !important;
+        font-weight: 700
+    }
+
+    .pun a:hover.usergroup-7 {
+        color: #98fdc8 !important
+    }
+
+    /* Fixed: text colour was #856404 (unreadable dark gold on purple). */
+    .pun .notice-bar {
+        background-color: #572e86;
+        color: #e0d1ea;
+        margin: 1em auto 1em auto;
+        padding: .75em 1.25em;
+        border: 1px solid transparent;
+        border-radius: unset;
+        border-color: #8e3fe8;
+        font-weight: 700;
+        font-size: 1em;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+    }
+
+    .pun .notice-bar a {
+        color: #fff
+    }
+
+    #payment th {
+        width: 15em;
+        font-weight: 700
+    }
+
+    #payment fieldset td span {
+        display: block;
+        font-size: 1em;
+        font-weight: 400
+    }
+
+    /* Fixed: second selector was "#paymenttable" (a non-existent id). */
+    #payment table.aligntop th,
+    #payment table.aligntop td {
+        vertical-align: top
+    }
+
+    #payment .payment-icons img {
+        width: 30px;
+        margin-left: 2px;
+        margin-top: 4px;
+        opacity: .5;
+        border: 1px solid #111;
+        filter: grayscale(50%);
+    }
+
+    .contains-error {
+        border: 1px solid #ba2323 !important
+    }
+
+    nav {
+        display: block
+    }
+
+    .gs-nav-container {
+        width: 100%;
+        max-width: 1070px;
+        margin: 0 auto;
+        height: 60px;
+        border-bottom: 1px solid #000
+    }
+
+    .gs-navbar {
+        position: relative;
+        min-height: 50px;
+        background-image: linear-gradient(to bottom, #303030 0, #151515 100%);
+        background-repeat: repeat-x;
+        display: none;
+    }
+
+    .gs-navbar ul {
+        float: left;
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+        border-left: 1px solid #161616;
+        border-right: 1px solid #333;
+        border-bottom: 1px solid transparent
+    }
+
+    .gs-navbar li {
+        float: left;
+        margin-bottom: -1px;
+        position: relative;
+        display: block;
+        height: 60px;
+        border-left: 1px solid #333;
+        border-right: 1px solid #161616
+    }
+
+    .gs-navbar li.active > a,
+    .gs-navbar li.active > a:focus,
+    .gs-navbar li.active > a:hover {
+        color: #fff;
+        cursor: default
+    }
+
+    .gs-navbar a {
+        text-decoration: none;
+        color: #888;
+        margin-right: 2px;
+        border: 1px solid transparent;
+        transition: color .5s ease;
+        position: relative;
+        display: block;
+        font-family: Impact, sans-serif;
+        font-size: 18pt;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-right: 15px;
+        padding-left: 15px;
+        line-height: 23px
+    }
+
+    .gs-navbar a:hover {
+        color: #fff
+    }
+
+    .gs-divider {
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(to right, #1e5799 0, #f300ff 50%, #e0ff00 100%);
+        height: 2px;
+        border-bottom: 1px solid #000;
+    }
+
+    .pun li.workshop-icon {
+        width: 40px;
+        height: 31px;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: center
+    }
+
+    .pun li.workshop-icon-0 {
+        background-image: url(/static/img/cat_rbot.png)
+    }
+
+    .pun li.workshop-icon-1 {
+        background-image: url(/static/img/cat_lbot.png)
+    }
+
+    .pun li.workshop-icon-2 {
+        background-image: url(/static/img/cat_aa.png)
+    }
+
+    .pun li.workshop-icon-3 {
+        background-image: url(/static/img/cat_vis.png)
+    }
+
+    .pun li.workshop-icon-4 {
+        background-image: url(/static/img/cat_misc.png)
+    }
+
+    .pun li.workshop-icon-5 {
+        background-image: url(/static/img/cat_skins.png)
+    }
+
+    .pun li.workshop-icon-6 {
+        background-image: url(/static/img/cat_plist.png)
+    }
+
+    @media only screen and (max-width: 800px) {
+        .postmsg iframe {
+            max-width: 100%;
+            height: auto
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        .pun .postfootright,
+        .pun .postright {
+            border-left-width: 0
+        }
+
+        .pun .postfootleft,
+        .pun .postleft {
+            display: none
+        }
+
+        .pun .blockpost .postleft {
+            width: 100%;
+            float: left;
+            display: block;
+            margin-left: 0
+        }
+
+        .pun .blockpost .postleft .postavatar,
+        .pun .blockpost:not(.liker) .postleft dd {
+            display: none
+        }
+
+        .pun .txtarea {
+            width: 90%
+        }
+
+        .pun #profile input,
+        .pun #profile select,
+        .pun #profile textarea {
+            width: 100%;
+            max-width: 350px
+        }
+
+        .pun .blockmenu {
+            width: 100%
+        }
+
+        .pun .blockmenu h2 {
+            display: none
+        }
+
+        .pun .block2col .block,
+        .pun .block2col .blockform {
+            margin-left: 0;
+            width: 100%;
+            clear: both
+        }
+
+        .pun .blockmenu ul {
+            border-width: 0
+        }
+
+        .pun .blockmenu li {
+            border-width: 0
+        }
+
+        .pun .blockmenu a,
+        .pun .blockmenu a:link,
+        .pun .blockmenu a:visited {
+            padding: 7px;
+            margin: 5px 5px 0 0
+        }
+
+        .pun .blockmenu .box {
+            margin-bottom: 6px
+        }
+
+        #viewprofile dd {
+            margin-left: 7em;
+            word-break: break-all
+        }
+
+        #viewprofile dt {
+            width: 6em
+        }
+
+        .postavatar img {
+            max-width: 100%;
+            height: auto
+        }
+    }
+
+
+    #shout #ajaxChatChatList {
+        background-color: #272726;
+    }
+
+    #shout .rowEven {
+        background-color: #1a1a1a;
+        padding: 3px;
+    }
+
+    #shout .rowOdd {
+        background-color: hsla(0, 0%, 13%, 1);
+        padding: 3px;
+    }
+
+    #shout .dateTime {
+        font-size: 11px;
+        color: #999;
+        margin-right: 5px;
+    }
+
+    #shout .guest {
+        color: gray;
+    }
+
+    #shout .user {
+        color: #888;
+    }
+
+    #shout .premium {
+        color: #e61515;
+        font-weight: bold;
+    }
+
+    #shout .moderator {
+        color: #ffcc00;
+        font-weight: bold;
+    }
+
+    #shout .admin {
+        color: #b4e61e;
+        font-weight: bold;
+    }
+
+    #shout .chatBot {
+        color: #00AA00;
+        font-weight: bold;
+    }
+
+    #shout,
+    #shout * {
+        box-sizing: border-box;
+    }
+
+    #shout {
+        background-color: #333;
+        font-size: 0.9em;
+        width: 100%;
+        overflow: auto;
+    }
+
+    /* The container of the messages */
+    #shout > div:nth-of-type(1) {
+        color: #d4d4d4;
+        height: 200px;
+        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        word-wrap: break-word;
+    }
+
+    #shout div::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #272726;
+    }
+
+    #shout div::-webkit-scrollbar {
+        width: 8px;
+        background-color: #272726;
+    }
+
+    #shout div::-webkit-scrollbar-thumb {
+        background-color: #666;
+    }
+
+    #shout p.warning {
+        background: #272726;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    #shout p {
+        padding: 0;
+        max-width: none;
+    }
+
+    #shout p > strong {
+        cursor: pointer;
+        border-bottom: 1px dashed #ccc;
+    }
+
+    #shout em {
+        display: none;
+        font-family: sans-serif;
+        line-height: 100px;
+        color: #eee;
+        font-weight: bold;
+    }
+
+    #shout em:last-child {
+        display: block;
+    }
+
+    #shout > form {
+        background: #272726;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #shout label {
+        display: block;
+        width: 100%;
+        height: 100%;
+        resize: none;
+        cursor: text;
+        padding: 0;
+    }
+
+    #shout label span {
+        display: block;
+        width: 100%;
+        color: #ccc;
+    }
+
+    #shout input {
+        width: 100%;
+        padding-right: 52px;
+        background: #1d1d1c;
+        border-top: 1px solid #444;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        cursor: text;
+        resize: none;
+        overflow-x: hidden;
+        overflow-y: auto;
+        font-size: 1.5em;
+        height: 22px;
+        vertical-align: top;
+    }
+
+    #emojiselector {
+        position: absolute;
+        right: 1px;
+        font-size: 1.5em;
+        width: 50px;
+        vertical-align: top;
+        float: right;
+        border-bottom: none;
+        border-right: none;
+        border-top: 1px solid #444;
+        border-left: none;
+    }
+
+    /* --- Header block (flattened from a nested #brdheader{} rule that --- */
+    /* --- depended on native CSS nesting support).                     --- */
+    #brdheader {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    #brdheader #brdwelcome {
+        padding: 10px;
+        border-radius: 0px;
+    }
+
+    #brdheader #brdwelcome .conl {
+        float: left;
+        width: 60%;
+        margin-right: 10px;
+    }
+
+    #brdheader #brdwelcome .conr {
+        float: right;
+        width: 35%;
+        text-align: right;
+    }
+
+    #brdheader #brdwelcome .conl li span strong {
+        color: #95b806;
+    }
+
+    #brdheader #brdwelcome .conl li:nth-child(2) span strong {
+        color: #e61515;
+    }
+
+    #brdheader #brdwelcome .conl li,
+    #brdheader #brdwelcome .conr li {
+        list-style: none;
+        margin: 5px 0;
+    }
+
+    #brdheader #brdwelcome .conl li span,
+    #brdheader #brdwelcome .conr li span {
+        font-size: 12px;
+        color: #d4d4d4;
+    }
+
+    #brdheader #brdwelcome .conr li span a {
+        color: #60a0dc;
+        text-decoration: none;
+    }
+
+    #brdheader #brdwelcome .conr li span a:hover {
+        color: #80d6ff;
+        text-decoration: underline;
+    }
+
+    #brdheader #brdwelcome .clearer {
+        clear: both;
+    }
+
+    #brdheader #brdmenu {
+        margin-bottom: 0;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        margin-left: -21px;
+        margin-right: -21px;
+        padding-left: 23px;
+        padding-right: 23px;
+        background-color: #0c0c0c;
+        color: #d4d4d4;
+        border-left: 1px solid #303030;
+        border-right: 1px solid #303030;
+        border-top: 1px solid #303030;
+        border-bottom: 1px solid #95B806;
+        font-family: Helvetica;
+    }
+}
