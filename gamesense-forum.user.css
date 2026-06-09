@@ -1,9 +1,12 @@
 /* ==UserStyle==
 @name           gamesense forum theme
 @namespace      github.com/Jozkah/gamesense-theme
-@version        0.0.4
+@version        0.0.5
 @description    gamesense forum theme (cleaned: bug fixes + dead-rule removal)
 @author         abbie (cleanup by Jozkah)
+@homepageURL    https://github.com/Jozkah/gamesense-theme
+@updateURL      https://raw.githubusercontent.com/Jozkah/gamesense-theme/main/gamesense-forum.user.css
+@supportURL     https://github.com/Jozkah/gamesense-theme/issues
 ==/UserStyle== */
 @-moz-document regexp("^https?://gamesense\\.pub/forums.*$") {
     .pun abbr,
